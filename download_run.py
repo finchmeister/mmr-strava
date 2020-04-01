@@ -69,7 +69,7 @@ def rename_download(workout_id):
     files_in_downloads = glob.glob(download_directory + '/*')
     if len(files_in_downloads) is not 1:
         raise Exception('Expected a single file in the downloads. Got:', files_in_downloads)
-    os.rename(download_directory + files_in_downloads[0], workout_directory + workout_id + '.tcx')
+    os.rename(files_in_downloads[0], workout_directory + workout_id + '.tcx')
 
 
 def main():
