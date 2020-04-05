@@ -30,8 +30,6 @@ make get-strava-auth
 make sync-latest
 ```
 
-
-### Todo
-
-- [ ] Dockerise
-- [ ] Automate...
+```
+make delpoy
+```

@@ -1,0 +1,6 @@
+stravaio==0.0.9
+stravalib==0.10.2
+boto3==1.6.18
+botocore==1.9.18
+selenium==2.53.6
+chromedriver-binary==2.37.0
