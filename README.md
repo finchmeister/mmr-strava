@@ -10,6 +10,7 @@ then uploads it to Strava
 - Python 3.7
 - Chromedriver
 - Pipenv
+- Strava client id and secret
 
 ### Installation
 
