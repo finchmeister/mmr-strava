@@ -76,4 +76,4 @@ class StravaImporter:
     def upload_workout(self, workout_file_path):
         temp_workout_file_path = '/tmp/' + self.get_workout_base_name(workout_file_path)
         self.s3_file_manager.download_file(workout_file_path, temp_workout_file_path)
-        self.client.upload_activity(open(workout_file_path), 'tcx', external_id=self.get_workout_id(workout_file_path))
+        self.client.upload_activity(open(temp_workout_file_path), 'tcx', external_id=self.get_workout_id(workout_file_path))
