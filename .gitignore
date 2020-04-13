@@ -1,5 +1,5 @@
 .env
 strava_auth.json
-.bin/
+bin/
 build.zip
 build/
