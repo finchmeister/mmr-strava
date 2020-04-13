@@ -1,8 +1,16 @@
 # MapMyRun to Strava Import
 
-### Requirements:
+Logins into MapMyRun with Selenium, 
+downloads the latest unrecognised workout,
+then uploads it to Strava
+
+## Local version
+
+### Requirements
+- Python 3.7
 - Chromedriver
 - Pipenv
+- Strava client id and secret
 
 ### Installation
 
@@ -10,7 +18,6 @@ Install requirements:
 ```
 pip install --user pipenv
 brew cask install chromedriver
-pipenv install
 ```
 
 Set environment vars
@@ -30,8 +37,14 @@ make get-strava-auth
 make sync-latest
 ```
 
+## AWS Lambda Version
 
-### Todo
+To run locally
+```
+make docker-run 
+```
 
-- [ ] Dockerise
-- [ ] Automate...
+To build and deploy to AWS
+```
+make deploy
+```

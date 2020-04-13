@@ -35,9 +35,9 @@ def set_gdpr_cookies(driver):
 
 def login_via_form(driver):
     email_field = driver.find_element_by_css_selector('input#email')
-    email_field.send_keys(os.getenv('EMAIL'))
+    email_field.send_keys(os.getenv('MMR_EMAIL'))
     password_field = driver.find_element_by_css_selector('input#password')
-    password_field.send_keys(os.getenv('PASSWORD'))
+    password_field.send_keys(os.getenv('MMR_PASSWORD'))
     password_field.send_keys(Keys.RETURN)
     time.sleep(request_wait_time)
 
