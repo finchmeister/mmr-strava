@@ -1,4 +1,4 @@
-.PHONY: sync-latest get-strava-auth help check clean fetch-dependencies docker-build build-lambda-package update-function-code
+.PHONY: sync-latest get-strava-auth help check clean fetch-dependencies docker-build build-lambda-package update-function-code invoke
 
 PYTHON_EXEC=pipenv run python
 
@@ -47,6 +47,10 @@ build-lambda-package: clean		## prepares zip archive for AWS Lambda deploy (-> b
 deploy: build-lambda-package    ## Builds and deploys AWS Lambda
 	aws s3 cp build.zip s3://mmr-strava-sync-data
 	aws lambda update-function-code --function-name=mmr-strava-sync --s3-bucket=mmr-strava-sync-data --s3-key=build.zip | cat
+
+
+invoke: ## Invokes the lambda
+	aws lambda invoke  --function-name=mmr-strava-sync /tmp/mmr-strava-sync-response.json | cat
 
 help:
 	@python -c 'import fileinput,re; \
